@@ -2,6 +2,8 @@
 
 Find a Tailwind color class name, hex or rgb value based on another value.
 
+Colors are from [Customizing colors](https://tailwindcss.com/docs/customizing-colors) and are accurate as of Tailwind v3.3.2
+
 ## Options
 
 ```
