@@ -1,4 +1,6 @@
-# nbb starter
-Sets up a base [nbb](https://github.com/babashka/nbb) project ready for publishing to NPM
+# Tailwind colors
 
-Based on [Publishing an nbb project to NPM](https://blog.michielborkent.nl/publishing-nbb-project-to-npm.html)
+Easily convert Tailwind colors
+
+- Tailwind class -> Hex
+- Hex - > Tailwind class
