@@ -1,7 +1,7 @@
 {
   "name": "tailwind-colors",
   "version": "0.1.0",
-  "description": "A template for NBB projects",
+  "description": "Find a Tailwind color class name, hex or rgb value based on another value.",
   "author": "philbaker",
   "license": "EPL-1.0",
   "dependencies": {
