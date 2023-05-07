@@ -1,6 +1,8 @@
 # Tailwind colors
 
-Easily find names, hex and RGB values of Tailwind CSS color classes.
+Find a Tailwind color class name, hex or rgb value based on another value.
+
+## Options
 
 ```
 # Class to hex (ch or class-to-hex)
