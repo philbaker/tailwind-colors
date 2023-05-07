@@ -21,11 +21,11 @@ rgb(254, 226, 226)
 ### Hex to class (hc or hex-to-class)
 ```bash
 $ node index.mjs hc "#fee2e2"
-:red-100
+red-100
 ```
 
 ### RGB to class (rc or rgb-to-class)
 ```bash
 $ node index.mjs rc "rgb(254, 226, 226)"
-:red-100
+red-100
 ```

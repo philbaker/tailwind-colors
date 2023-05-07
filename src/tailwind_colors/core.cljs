@@ -499,12 +499,12 @@
 (defn hex-to-class 
   "Get class name based on hex value"
   [hex-code]
-  (key-from-value hex-code colors-hex))
+  (name (key-from-value hex-code colors-hex)))
 
 (defn rgb-to-class 
   "Get class name based on rgb value"
   [rgb-code]
-  (key-from-value rgb-code colors-rgb))
+  (name (key-from-value rgb-code colors-rgb)))
 
 (defn class-to-hex 
   "Get hex code based on class name"
