@@ -4,6 +4,9 @@ Find a Tailwind color class name, hex or rgb value based on another value.
 
 Colors are from [Customizing colors](https://tailwindcss.com/docs/customizing-colors) and are accurate as of Tailwind v3.3.2
 
+## Getting started
+Clone this repo and run `npm install`
+
 ## Customising colors
 
 Custom colors can be included via colors.json and will overwrite the default Tailwind palette
