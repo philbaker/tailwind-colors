@@ -30,3 +30,55 @@
   "Formats rgb output in CSS rgb() form"
   [rgb-code]
   (str "rgb(" (str/join ", " rgb-code) ")"))
+
+(defn normalize-colors 
+  "Turns the nested structure from Tailwind's config into a flat one with 
+  color names as keys"
+  [coll]
+  (reduce (fn [acc [color-name colors]]
+            (reduce (fn [acc2 [key val]]
+                      (assoc acc2 (->> (str key)
+                                       (str color-name "-"))
+                             val))
+                    acc
+                    colors))
+          {}
+          coll))
+
+
+(defn bulk-hex-to-rgb 
+  "Converts all hex values in a map to rgb"
+  [colors]
+  (->> colors
+       (map (fn [[key val]] [key (-> val 
+                                     (hex-to-rgb) 
+                                     (rgb-format-css))]))
+       (into {})))
+
+(defn key-from-value 
+  "Look up a hash map key by value"
+  [value coll]
+  (first 
+    (filter 
+      (comp #{value} coll) 
+      (keys coll))))
+
+(defn hex-to-class
+  "Get class name based on hex value"
+  [hex-code data]
+  (name (key-from-value hex-code data)))
+
+(defn rgb-to-class
+  "Get class name based on rgb value"
+  [rgb-code data]
+  (name (key-from-value rgb-code data)))
+
+(defn class-to-hex
+  "Get hex code based on class name"
+  [class-name data]
+  ((keyword class-name) data))
+
+(defn class-to-rgb
+  "Get rgb code based on class name"
+  [class-name data]
+  ((keyword class-name) data))
