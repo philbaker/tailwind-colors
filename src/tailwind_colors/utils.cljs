@@ -1,4 +1,6 @@
-(ns tailwind-colors.utils)
+(ns tailwind-colors.utils
+  (:require [clojure.string :as str]
+            [cljs.reader :as c]))
 
 (defn handle-short-hex 
   "Converts a 3 char hex to the equivalent 6 char version"
