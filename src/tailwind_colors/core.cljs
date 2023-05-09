@@ -14,10 +14,10 @@
       (get "colors")))
 
 (def project-colors
-  (-> custom-colors
-      (utils/normalize-colors)
-      (walk/keywordize-keys)
-      (merge colors/default-colors)))
+  (merge colors/default-colors
+         (-> custom-colors
+             (utils/normalize-colors)
+             (walk/keywordize-keys))))
 
 (def project-colors-rgb (utils/bulk-hex-to-rgb project-colors))
 
