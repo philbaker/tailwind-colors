@@ -1,12 +1,13 @@
 (ns tailwind-colors.core
   (:require ["fs" :as fs]
+            ["app-root-path$default" :as app-root-path]
             [clojure.walk :as walk]
             [tailwind-colors.utils :as utils]
             [tailwind-colors.colors :as colors]))
 
 ; Set up color data
 (def custom-colors
-  (-> "colors.json"
+  (-> (str app-root-path "/colors.json")
       (fs/readFileSync)
       (str)
       (js/JSON.parse)
@@ -27,8 +28,8 @@
   (let [hex (.stringify js/JSON (clj->js project-colors))
         rgb (.stringify js/JSON (clj->js project-colors-rgb))]
     (do
-      (fs/writeFileSync "public/assets/hex_colors.json" hex)
-      (fs/writeFileSync "public/assets/rgb_colors.json" rgb))))
+      (fs/writeFileSync (str app-root-path "/public/assets/hex_colors.json") hex)
+      (fs/writeFileSync (str app-root-path "/public/assets/rgb_colors.json") rgb))))
 
 ; Command line arguments
 (def cmd-line-args (js->clj (.slice js/process.argv 2)))

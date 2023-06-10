@@ -5,6 +5,7 @@
   "author": "philbaker",
   "license": "EPL-1.0",
   "dependencies": {
+    "app-root-path": "^3.1.0",
     "nbb": "^1.2.173"
   },
   "repository": {
